@@ -240,11 +240,9 @@ public class WearProviderService extends Service implements
     }
 
     @Override
-    public void onMessageReceived(MessageEvent messageEvent) {
-        if(messageEvent.getPath().equals(MESSAGE_RECEIVED_PATH)) {
-            final String message = new String(messageEvent.getData());
-            dataReceived(messageEvent.getSourceNodeId(), message);
-        }
+    public void onMessageReceived(MessageEvent messageEvent) {    
+        final String message = new String(messageEvent.getData());
+        dataReceived(messageEvent.getSourceNodeId(), message);
     }
 
     @Override
